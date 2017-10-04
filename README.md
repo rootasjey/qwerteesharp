@@ -9,7 +9,7 @@ This lib is compatible with .NET Core, .NET Framework 4.6.1, Xamarin (iOS, Andro
 I wanted to group all the algorithms used in my Wearme app into a library for more clarity.
 
 # Installation
-Install the library from Nuget
+[Nuget](https://www.nuget.org/packages/Qwerteesharp/) `Install-Package Qwerteesharp`
 
 # Usage
 
