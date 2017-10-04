@@ -1,5 +1,5 @@
 # qwerteesharp
-C# Qwertee data extractor into a library targeting .NET Standard 1.4..
+Very simple C# Qwertee data extractor into a library targeting .NET Standard 1.4.
 
 :warning: This library is unstable because it parses the [Qwertee website](https://www.qwertee.com/) and any unavailability of Qwertee website will make this API unavailable. And any DOM changes of the Qwertee website will probably make this lib outdated.
 
@@ -25,10 +25,11 @@ client.GetTodayTees();
 * [Instantiate a new client](https://github.com/rootasjey/qwerteesharp#instantiate-a-new-client)
 * [Designs](https://github.com/rootasjey/qwerteesharp#designs)
 * [Prints](https://github.com/rootasjey/qwerteesharp#prints)
+* [Time](https://github.com/rootasjey/qwerteesharp#time)
 
 ## Instantiate a new client
 
-```JavaScript
+```csharp
 var client = new QwerteesharpClient();
 ```
 
@@ -36,20 +37,28 @@ var client = new QwerteesharpClient();
 
 ### Get all current designs
 
-```JavaScript
+```csharp
 var currentDesigns = await client.GetAllCurrentDesigns();
 ```
 
 ### Get today designs
 
-```JavaScript
+```csharp
 var todayDesigns = await client.GetTodayDesigns();
 ```
 
 ### Get last chance designs
 
-```JavaScript
+```csharp
 var lastChanceDesigns = await client.GetLastChanceDesigns();
 ```
 
 ## Prints
+
+## Time
+
+To get the `TimeSpan` before the next sale, you can use the following method:
+
+```csharp
+var nextSale = client.GetTimeSpanBeforeNextSale();
+```

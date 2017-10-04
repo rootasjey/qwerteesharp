@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qwerteesharp", "Qwerteesharp\Qwerteesharp.csproj", "{F3D3948F-88E1-43CE-9D94-086889FF844C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qwerteesharp", "Qwerteesharp\Qwerteesharp.csproj", "{F3D3948F-88E1-43CE-9D94-086889FF844C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QwerteesharpTest", "QwerteesharpTest\QwerteesharpTest.csproj", "{5BFC9CC4-B2CF-413A-A6AC-C4DA37034188}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F3D3948F-88E1-43CE-9D94-086889FF844C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D3948F-88E1-43CE-9D94-086889FF844C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D3948F-88E1-43CE-9D94-086889FF844C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BFC9CC4-B2CF-413A-A6AC-C4DA37034188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFC9CC4-B2CF-413A-A6AC-C4DA37034188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFC9CC4-B2CF-413A-A6AC-C4DA37034188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFC9CC4-B2CF-413A-A6AC-C4DA37034188}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
