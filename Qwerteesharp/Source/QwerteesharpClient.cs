@@ -41,7 +41,35 @@ namespace Qwerteesharp {
                 designsList.Add(DataExtractor.ExtractDesign(nodeTee));
             }
 
+            DetermineLastChanceDesigns(designsList);
+
             return designsList;
+        }
+        
+        /// <summary>
+        /// Determine if last chance.
+        /// </summary>
+        /// <param name="designsList"></param>
+        private void DetermineLastChanceDesigns(List<Design> designsList) {
+            var countLastChance = 0;
+            var firstPrice = designsList[0].Tee.Prices.EUR.Value;
+
+            foreach (var design in designsList) {
+                if (firstPrice < design.Tee.Prices.EUR.Value) {
+                    design.IsLastChance = true;
+                    countLastChance++;
+
+                } else design.IsLastChance = false;
+            }
+
+            if (countLastChance == 0) {
+                foreach (var design in designsList) {
+                    if (firstPrice == design.Tee.Prices.EUR.Value) {
+                        design.IsLastChance = true;
+
+                    } else design.IsLastChance = false;
+                }
+            }
         }
 
         /// <summary>

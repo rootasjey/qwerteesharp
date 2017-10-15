@@ -34,6 +34,13 @@
         public int Votes { get; set; }
 
         /// <summary>
+        /// True if the design is on its last chance time.
+        /// (A new tee more than 24 hours to be bought,
+        ///  whereas a last chance design has less than 24 hours)
+        /// </summary>
+        public bool IsLastChance { get; set; }
+
+        /// <summary>
         /// Design's tee.
         /// </summary>
         public Tee Tee { get; set; }
