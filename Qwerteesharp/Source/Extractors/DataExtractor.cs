@@ -39,10 +39,12 @@ namespace Qwerteesharp.Extractors {
         public static Design ExtractDesign(HtmlNode nodeTee) {
             var childrenNodeTee = nodeTee.Descendants("div");
             var childNodeTee = childrenNodeTee.First();
+            var defaultLink = "https://www.qwertee.com/";
 
             var design = new Design {
                 Id = nodeTee.GetAttributeValue("id", ""),
                 Name = childNodeTee.GetAttributeValue("data-name", ""),
+                Link = defaultLink,
                 Tee = new Tee() {
                     ImagesUrls = new List<string>(),
                     Prices = ExtractPrices(childNodeTee, "tee")
@@ -80,16 +82,24 @@ namespace Qwerteesharp.Extractors {
             var imgSweaterSource = imgMensSource.Replace("-mens-", "-sweater-");
             var imgZoomSource = imgMensSource.Replace("-mens-", "-zoom-");
 
-            design.ImageUrl = imgZoomSource;
+            design.ImageUrl = FormatUrl(imgZoomSource);
 
-            design.Tee.ImagesUrls.Add(imgMensSource);
-            design.Tee.ImagesUrls.Add(imgWomensSource);
-            design.Tee.ImagesUrls.Add(imgKidsSource);
+            design.Tee.ImagesUrls.Add(FormatUrl(imgMensSource));
+            design.Tee.ImagesUrls.Add(FormatUrl(imgWomensSource));
+            design.Tee.ImagesUrls.Add(FormatUrl(imgKidsSource));
 
-            design.Hoodie.ImageUrl = imgHoodieSource;
-            design.Sweater.ImageUrl = imgSweaterSource;
+            design.Hoodie.ImageUrl = FormatUrl(imgHoodieSource);
+            design.Sweater.ImageUrl = FormatUrl(imgSweaterSource);
 
             return design;
+        }
+
+        private static string FormatUrl(string url) {
+            if (url.StartsWith("//")) {
+                return $"https:{url}";
+            }
+
+            return url;
         }
     }
 }
